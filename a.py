@@ -9,18 +9,21 @@ def printa():
         data = json.dumps(json.load(outfile))
 
     questiondata = list(speakagent.hearme())
-    data += '{"question":"' + str(questiondata[0]) + ',"answer":"' + str(questiondata[1]) + '"}'
+
+    data = data[1:len(data)-1]
+
+    data += ',{"question":"' + str(questiondata[0]) + '","answer":"' + str(questiondata[1]) + '"}'
 
     with open("exampledata.json","w") as outfile:
         outfile.write("[" + data + "]")
 
-    with open("exampledata.json", "r") as outfile: 
-        jo = json.load(outfile)
-        print(jo["answer"])
+    # with open("exampledata.json", "r") as outfile: 
+    #     jo = json.load(outfile)
+    #     print(jo["answer"])
 
     # py framedemo.py
 
-with open("exampledata.json", "r") as outfile: 
-        jo = json.load(outfile)
-        item = list(jo)
-        print(item[1]["question"])
+# with open("exampledata.json", "r") as outfile: 
+#         jo = json.load(outfile)
+#         item = list(jo)
+#         print(item[1]["question"])
