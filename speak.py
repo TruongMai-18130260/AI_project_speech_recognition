@@ -16,14 +16,14 @@ def hearme():
     question = robot_ear.recognize_google(audio)
     print(question)
 
-    engine.say("tell me answer ?")
-    with speech_recognition.Microphone() as mic:
-        print("answer...")
-        audio = robot_ear.listen(mic)
-    answer = robot_ear.recognize_google(audio)
-    print(answer)
+    # engine.say("tell me answer ?")
+    # with speech_recognition.Microphone() as mic:
+    #     print("answer...")
+    #     audio = robot_ear.listen(mic)
+    # answer = robot_ear.recognize_google(audio)
+    # print(answer)
     
-    return {question,answer}
+    return question
 
 
 

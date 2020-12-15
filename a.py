@@ -6,13 +6,14 @@ import json
 def printa():
     data = ""
     with open("exampledata.json", "r") as outfile:
-        data = json.dumps(json.load(outfile))
+        tmp = json.dumps(json.load(outfile))
+        data = tmp[1:len(tmp)-1]
 
-    questiondata = list(speakagent.hearme())
+    questiondata = speakagent.hearme()
+    answer = speakagent.hearme()
 
-    data = data[1:len(data)-1]
 
-    data += ',{"question":"' + str(questiondata[0]) + '","answer":"' + str(questiondata[1]) + '"}'
+    data += ',{"question":"' + questiondata + '","answer":"' + answer + '"}'
 
     with open("exampledata.json","w") as outfile:
         outfile.write("[" + data + "]")
