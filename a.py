@@ -5,7 +5,7 @@ import json
 
 def printa():
     data = ""
-    with open("exampledata.json", "r") as outfile:
+    with open("exampledata.json", "r",encoding="utf8") as outfile:
         tmp = json.dumps(json.load(outfile))
         data = tmp[1:len(tmp)-1]
 
@@ -15,7 +15,7 @@ def printa():
 
     data += ',{"question":"' + questiondata + '","answer":"' + answer + '"}'
 
-    with open("exampledata.json","w") as outfile:
+    with open("exampledata.json","w",encoding="utf8") as outfile:
         outfile.write("[" + data + "]")
 
     # with open("exampledata.json", "r") as outfile: 

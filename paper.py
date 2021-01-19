@@ -89,7 +89,17 @@ import json
 
 # root.mainloop()
 
-with open("exampledata.json", "r") as outfile:
-    tmp = json.dumps(json.load(outfile))
-    data = tmp[1:len(tmp)-1]
-    print(data)    
+# with open("exampledata.json", "r") as outfile:
+#     tmp = json.dumps(json.load(outfile))
+#     data = tmp[1:len(tmp)-1]
+#     print(data)    
+
+txt = "Ngày 15 tháng 2 năm 2000"
+
+x = txt.replace("Ngày","").replace("tháng","").replace("năm","").replace(" ","")
+num = 0
+for index in range(len(x)):
+    num += int(x[index])
+
+print(x)
+print(num)
